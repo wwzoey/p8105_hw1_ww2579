@@ -69,3 +69,10 @@ Make a scatterplot.
 ggplot(data = penguins, mapping = aes(x = bill_length_mm,y = flipper_length_mm, color = species)) + geom_point(na.rm = TRUE)
 ```
 
+Export scatterplot to my project directory. 
+
+```{r}
+ggsave(
+  filename = "first_plot.png", width = 178, height = 178, units = "mm", pointsize = 12, bg = "white", family = "", restoreConsole = TRUE)
+```
+
