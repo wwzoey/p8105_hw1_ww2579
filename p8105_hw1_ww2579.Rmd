@@ -61,3 +61,11 @@ The "penguins" includes data about `r ls(penguins)`.
   According to the data of all species, the bill length is in a range of (`r range(pull(penguins, bill_length_mm), na.rm = TRUE)`) mm, the bill depth is between (`r range(pull(penguins, bill_depth_mm), na.rm = TRUE)`) mm, the flipper length has a range of (`r range(pull(penguins, flipper_length_mm), na.rm = TRUE)`) mm, and the body mass has a range of (`r range(pull(penguins, body_mass_g), na.rm = TRUE)`) g.  
   This dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.  
   The mean of flipper length is `r mean(pull(penguins, flipper_length_mm), na.rm=TRUE)` mm. 
+
+
+Make a scatterplot.
+
+```{r}
+ggplot(data = penguins, mapping = aes(x = bill_length_mm,y = flipper_length_mm, color = species)) + geom_point(na.rm = TRUE)
+```
+
